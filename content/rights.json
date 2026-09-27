@@ -1,0 +1,32 @@
+{
+  "_comment": "TODO: ต้องขอรายละเอียดสิทธิการรักษาจากโรงพยาบาล",
+  "schemes": [
+    {
+      "id": "gold-card",
+      "name": "สิทธิบัตรทอง (สิทธิ 30 บาท)",
+      "hotline": "1330",
+      "description": null,
+      "eligibility": null,
+      "documents_needed": null,
+      "process": null
+    },
+    {
+      "id": "social-security",
+      "name": "สิทธิประกันสังคม",
+      "hotline": "1506",
+      "description": null,
+      "eligibility": null,
+      "documents_needed": null,
+      "process": null
+    },
+    {
+      "id": "civil-servant",
+      "name": "สิทธิข้าราชการ",
+      "hotline": null,
+      "description": null,
+      "eligibility": null,
+      "documents_needed": null,
+      "process": null
+    }
+  ]
+}

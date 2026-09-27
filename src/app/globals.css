@@ -2,26 +2,128 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===== Font Size Scaling ===== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-size-base: 17px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html.font-size-normal {
+  --font-size-base: 17px;
+}
+
+html.font-size-large {
+  --font-size-base: 18px;
+}
+
+html.font-size-xlarge {
+  --font-size-base: 20px;
+}
+
+/* ===== Base Styles ===== */
+body {
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+  color: #0F172A;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Smooth Scroll with Reduced Motion Respect ===== */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* ===== Focus Styles ===== */
+*:focus-visible {
+  outline: 2px solid #00694E;
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* ===== Skip to Content ===== */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  padding: 12px 24px;
+  background-color: #00694E;
+  color: white;
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+  transition: top 150ms ease-out;
+  text-decoration: none;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* ===== Responsive Table on Mobile ===== */
+@media (max-width: 767px) {
+  .responsive-table thead {
+    display: none;
+  }
+
+  .responsive-table tbody tr {
+    display: block;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+    background: white;
+  }
+
+  .responsive-table tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 4px 0;
+    border: none;
+  }
+
+  .responsive-table tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #475569;
+    flex-shrink: 0;
+    margin-right: 16px;
+  }
+}
+
+/* ===== Transitions ===== */
+@media (prefers-reduced-motion: no-preference) {
+  .transition-default {
+    transition: all 150ms ease-out;
+  }
+
+  .transition-colors-default {
+    transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
+  }
+}
+
+/* ===== Prevent text justify ===== */
+* {
+  text-align: inherit;
+}
+
+body {
+  text-align: left;
+}
+
+/* ===== Mobile bottom bar spacing ===== */
+@media (max-width: 767px) {
+  main {
+    padding-bottom: 64px;
+  }
+}
+
+/* ===== Print styles ===== */
+@media print {
+  .no-print {
+    display: none !important;
   }
 }

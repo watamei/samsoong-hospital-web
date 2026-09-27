@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api
+
+Sitemap: https://www.sshos.go.th/sitemap.xml

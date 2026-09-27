@@ -3,24 +3,40 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "db:init": "tsx scripts/init-db.ts",
+    "predev": "npm run db:init",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "archiver": "^8.0.0",
+    "bcrypt": "^6.0.0",
+    "better-sqlite3": "^13.0.3",
+    "dotenv": "^18.0.4",
+    "framer-motion": "^13.4.4",
+    "lucide-react": "^1.48.0",
+    "nanoid": "^3.3.19",
+    "next": "14.2.35",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.35"
+    "sharp": "^0.35.4",
+    "uuid": "^14.0.2"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@types/archiver": "^8.0.0",
+    "@types/bcrypt": "^6.0.0",
+    "@types/better-sqlite3": "^9.6.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/uuid": "^10.0.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.35",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.35"
+    "tsx": "^4.23.15",
+    "typescript": "^5"
   }
 }

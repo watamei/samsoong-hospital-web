@@ -1,0 +1,13 @@
+{
+  "address": "231 หมู่ 3 ถนนกระนวน-เชียงยืน ตำบลกระนวน อำเภอซำสูง จังหวัดขอนแก่น 40170",
+  "phone": "043-219192",
+  "emergency": "1669",
+  "nhso_hotline": "1330",
+  "facebook": "https://www.facebook.com/sumsunghospital",
+  "email": null,
+  "line_oa": null,
+  "gps_lat": null,
+  "gps_lng": null,
+  "opening_hours": null,
+  "_comment": "TODO: ต้องขออีเมล Line OA พิกัด GPS เวลาเปิดบริการ จากโรงพยาบาล"
+}
