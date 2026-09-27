@@ -13,13 +13,16 @@ export default function ITAPage() {
   try {
     const filePath = path.join(process.cwd(), 'content', 'ita.json');
     const fileContents = fs.readFileSync(filePath, 'utf8');
-    itaData = JSON.parse(fileContents);
-  } catch (error) {
-    // Silently handle if file doesn't exist yet, we will map 1-22 manually as fallback
+    const parsed = JSON.parse(fileContents);
+    itaData = Array.isArray(parsed) ? parsed : (Array.isArray(parsed.moits) ? parsed.moits : []);
+  } catch (_) {
+    // Silently handle if file doesn't exist yet
+  }
+  if (itaData.length === 0) {
     itaData = Array.from({ length: 22 }, (_, i) => ({
+      id: i + 1,
       moit: `MOIT ${i + 1}`,
-      title: i === 0 ? 'การกำหนดมาตรการ และวางระบบการเผยแพร่ข้อมูลต่อสาธารณะผ่านเว็บไซต์ของหน่วยงาน' : 
-             i === 1 ? 'การเปิดเผยข้อมูลข่าวสารที่เป็นปัจจุบัน' : `หัวข้อประเมินที่ ${i + 1}`
+      title: `หัวข้อประเมินที่ ${i + 1}`,
     }));
   }
 
